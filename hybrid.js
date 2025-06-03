@@ -56,7 +56,7 @@ function applyFilters(messageText) {
   if (sessionString && !process.env.SESSION_STRING) {
     const envPath = path.join(__dirname, '.env');
     let envContent = fs.readFileSync(envPath, 'utf8');
-    envContent = envContent.replace(/SESSION_STRING=.*/, `SESSION_STRING=${sessionString}`);
+    envContent = envContent.replace(/SESSION_STRING=.*$/m, `SESSION_STRING=${sessionString}`);
     fs.writeFileSync(envPath, envContent);
     console.log('✓ Session string saved to .env file');
     console.log('\nIMPORTANT: Copy the updated .env file to your Docker host before running in container mode!');
