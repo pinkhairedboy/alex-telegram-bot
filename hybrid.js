@@ -12,7 +12,6 @@ const apiId = parseInt(process.env.API_ID);
 const apiHash = process.env.API_HASH;
 const stringSession = new StringSession(process.env.SESSION_STRING || '');
 const botToken = process.env.BOT_TOKEN;
-const yourChatId = parseInt(process.env.YOUR_CHAT_ID); // Your chat ID for bot to send to
 const monitoredChatUsernames = process.env.MONITORED_CHAT_USERNAMES ?
   process.env.MONITORED_CHAT_USERNAMES.split(',').map(u => u.trim()) : [];
 const filterKeywords = process.env.FILTER_KEYWORDS ?
@@ -46,6 +45,11 @@ function applyFilters(messageText) {
   });
   
   console.log('Client connected.');
+  
+  // Get user's chat ID from client
+  const me = await client.getMe();
+  const yourChatId = me.id;
+  console.log(`Your chat ID: ${yourChatId}`);
 
   // Save session string
   const sessionString = client.session.save();

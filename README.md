@@ -31,7 +31,6 @@ docker-compose up -d
 
 - `MONITORED_CHAT_USERNAMES` - Comma-separated list of group usernames to monitor
 - `FILTER_KEYWORDS` - Keywords to filter messages (case-insensitive)
-- `YOUR_CHAT_ID` - Your Telegram user ID
 - `BOT_TOKEN` - Bot token from @BotFather
 - `API_ID` & `API_HASH` - From https://my.telegram.org/apps
 
