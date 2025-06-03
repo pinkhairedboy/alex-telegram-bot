@@ -1,0 +1,14 @@
+{
+  "name": "alex-telegram-bot",
+  "version": "1.0.0",
+  "main": "hybrid.js",
+  "scripts": {
+    "start": "node hybrid.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "input": "^1.0.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "telegram": "^2.26.22"
+  }
+}
