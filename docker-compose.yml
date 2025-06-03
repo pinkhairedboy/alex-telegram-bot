@@ -1,0 +1,11 @@
+services:
+  telegram-bot:
+    build: .
+    container_name: alex-telegram-bot
+    restart: unless-stopped
+    volumes:
+      - ./.env:/app/.env:ro
+    environment:
+      - TZ=Asia/Jakarta
+    stdin_open: true
+    tty: true

@@ -44,7 +44,7 @@ function applyFilters(messageText) {
     phoneCode: async () => await input.text('Please enter the code you received: '),
     onError: (err) => console.log(err),
   });
-
+  
   console.log('Client connected.');
 
   // Save session string
@@ -54,7 +54,8 @@ function applyFilters(messageText) {
     let envContent = fs.readFileSync(envPath, 'utf8');
     envContent = envContent.replace(/SESSION_STRING=.*/, `SESSION_STRING=${sessionString}`);
     fs.writeFileSync(envPath, envContent);
-    console.log('✓ Session string saved');
+    console.log('✓ Session string saved to .env file');
+    console.log('\nIMPORTANT: Copy the updated .env file to your Docker host before running in container mode!');
   }
 
   // Get monitored chat IDs
