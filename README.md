@@ -21,10 +21,10 @@ Monitors Telegram groups for specific keywords and forwards matching messages wi
 
 ```bash
 # First time setup (if you haven't authenticated locally)
-docker-compose run --rm telegram-bot
+docker compose run --rm telegram-bot
 
 # Normal operation (with existing session)
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Configuration
